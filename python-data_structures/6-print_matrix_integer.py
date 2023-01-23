@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     for x in (matrix):
+        y = 0
         for y in x:
-            print('{:d}'.format(y), end=" ")
+            if y != len(x)-1:
+                print('{:d}'.format(y), end=" ")
+            else:
+                print('{:d}'.format(y), end="")
+            y += 1
         print()
