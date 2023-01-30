@@ -7,4 +7,4 @@ class Square:
         """
         Initializes a new instance of the class
         """
-	pass
+        pass
