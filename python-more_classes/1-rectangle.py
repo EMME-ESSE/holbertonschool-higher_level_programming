@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""class Rectangle"""
+"""class rectangle"""
 
 
-class Rectanlge:
+class Rectangle:
     """The rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
