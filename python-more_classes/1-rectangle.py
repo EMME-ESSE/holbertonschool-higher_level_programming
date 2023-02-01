@@ -3,7 +3,7 @@
 
 
 class Rectanlge:
- """The rectangle"""
+    """The rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -11,7 +11,7 @@ class Rectanlge:
     @property
     def width(self):
         return self.__width
-    """ width setter """
+    """width setter"""
     @width.setter
     def width(self, width):
         if type(width) is not int:
@@ -23,7 +23,7 @@ class Rectanlge:
     @property
     def height(self):
         return self.__height
-    """height setter """
+    """height setter"""
     @height.setter
     def height(self, height):
         if type(height) is not int:
@@ -31,4 +31,3 @@ class Rectanlge:
         elif height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
-
