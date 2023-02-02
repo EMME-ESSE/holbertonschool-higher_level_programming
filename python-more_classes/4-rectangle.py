@@ -46,10 +46,14 @@ class Rectangle:
             return a
         else:
             for x in range(self.__height):
-                a += ("#" * self.__width) 
-                if (x < self.__height -1):
+                a += ("#" * self.__width)
+                if (x < self.__height - 1):
                     a += ("\n")
         return a
 
     def __repr__(self):
+<<<<<<< HEAD
         return (f"Rectangle({self.__width:d}, {self.__height:d})")        
+=======
+        return (f"Rectangle({self.__width:d}, {self.__height:d})")
+>>>>>>> 2fa892cd1f060b6bd38bf8f980a935b34f513511
