@@ -53,7 +53,7 @@ class Rectangle:
             for x in range(self.__height):
                 for w in range(self.__width):
                     print(self.print_symbol, end="")
-                if (x < self.__height -1):
+                if (x < self.__height - 1):
                     print()
         return a
 
