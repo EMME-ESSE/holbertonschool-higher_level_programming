@@ -4,6 +4,7 @@
 
 class Rectangle:
     """The rectangle"""
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -50,9 +51,10 @@ class Rectangle:
             return a
         else:
             for x in range(self.__height):
-                a += ("#" * self.__width) 
+                for w in range(self.__width):
+                    print(self.print_symbol, end="")
                 if (x < self.__height -1):
-                    a += ("\n")
+                    print()
         return a
 
     def __repr__(self):
