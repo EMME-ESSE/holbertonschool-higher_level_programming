@@ -46,7 +46,7 @@ class Rectangle:
             return a
         else:
             for x in range(self.__height):
-                a += ("#" * self.__width) 
+                a += ("#" * self.__width)
                 if (x < self.__height -1):
                     a += ("\n")
         return a
