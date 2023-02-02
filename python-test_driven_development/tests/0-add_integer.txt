@@ -10,7 +10,7 @@ Test function:
 >>> add_integer(7)
 105
 
->>> add_integer(true, false)
+>>> add_integer("hello", 12)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
