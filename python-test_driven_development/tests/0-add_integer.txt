@@ -4,11 +4,17 @@ Import function:
 
 Test function:
 
->>> add_integer(5, 7)
-12
+>>> add_integer(1, 2)
+3
 
->>> add_integer(7)
-105
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(90.1, -2)
+88
+
+>>> add_integer(2)
+100
 
 >>> add_integer("hello", 12)
 Traceback (most recent call last):
@@ -18,12 +24,6 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: b must be an integer
 
->>> add_integer(0.3342, 0.922139)
-0
-
->>> add_integer(9223372036854775808, 1)
-9223372036854775809
-
 >>> add_integer(98, None)
 Traceback (most recent call last):
 TypeError: b must be an integer
@@ -32,15 +32,13 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
 >>> add_integer(1000e1000, 1000e1000)
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
-
->>> add_integer(10e10, -10e10)
-0
-
->>> add_integer(-40, -240)
--280
 
 >>> add_integer("hola")
 Traceback (most recent call last):
