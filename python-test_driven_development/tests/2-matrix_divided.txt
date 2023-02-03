@@ -1,8 +1,12 @@
 The ''2-matrix_divided.py'' module
+======================
 
 Using ''matrix_divided''
+-------------------
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[2, 4], [4, 8]]
 
 >>> not_int_matrix = [[2, "Hello"], ["World", 4]]
 
