@@ -1,4 +1,7 @@
+Importing the function 
 >>> print_square = __import__('4-print_square').print_square
+
+TESTS
 
 >>> print_square(4)
 ####
@@ -6,29 +9,28 @@
 ####
 ####
 
+>>> print_square(-7)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
 >>> print_square(0)
 
 
->>> print_square("hola")
+>>> print_square(1)
+#
+
+>>> print_square('\n')
 Traceback (most recent call last):
 TypeError: size must be an integer
 
->>> print_square(-2)
+>>> print_square("hello")
 Traceback (most recent call last):
-ValueError: size must be >= 0
+TypeError: size must be an integer
 
->>> print_square(2.3)
-##
-##
-
->>> print_square(-2.3)
+>>> print_square((5, 6))
 Traceback (most recent call last):
-ValueError: size must be >= 0
+TypeError: size must be an integer
 
->>> print_square(float('inf'))
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
-
->>> print_square(None)
+>>> print_square(5.566565)
 Traceback (most recent call last):
 TypeError: size must be an integer
