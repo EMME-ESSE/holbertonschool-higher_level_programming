@@ -59,7 +59,7 @@ class Rectangle:
             for x in range(self.__height):
                 print(self.print_symbol, end="")
                 if (x < self.__height - 1):
-                    a += ("\n")
+                   print() 
         return a
 
     def __repr__(self):
