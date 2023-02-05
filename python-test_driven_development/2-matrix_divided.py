@@ -15,6 +15,18 @@ def matrix_divided(matrix, div):
         raise TypeError(err)
     if not all(map(lambda x: len(x) == len(matrix[0]), matrix)):
         raise TypeError("Each row of the matrix must have the same size")
-    if not all(map(lambda x: all(map(lambda y: type(y) in [int, float], x)), matrix)):
+    if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError(err)
-    return [[round(y / div, 2) for y in x] for x in matrix]
+    new_mx = []
+    for lists in matrix:
+        if len(lists) != len(matrix[0]):
+            raise TypeError("Each row of the matrix must have the same size")
+        new_list = []
+        for position in lists:
+            if type(position) is not int and type(position) is not float:
+                raise TypeError(err)
+            new_list.append(round(position/div, 2))
+        new_mx.append(new_list)
+    return new_mx
+    
+  
