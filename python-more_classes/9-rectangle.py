@@ -59,10 +59,11 @@ class Rectangle:
             for x in range(self.__height):
                 print(self.print_symbol, end="")
                 if (x < self.__height - 1):
-                   print() 
+                    print()
         return a
 
     def __repr__(self):
+        """ override repr """
         return (f"Rectangle({self.__width:d}, {self.__height:d})")
 
     def __del__(self):
