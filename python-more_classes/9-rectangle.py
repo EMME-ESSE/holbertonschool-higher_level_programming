@@ -1,55 +1,49 @@
 #!/usr/bin/python3
-"""··· >>>Class Rectangle<<< ···"""
+"""class rectangle"""
 
 
 class Rectangle:
-    """ ···Define Rectangle··· """
+    """The rectangle"""
+
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """ init class """
-        self.height = height
-        self.width = width
         Rectangle.number_of_instances += 1
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """ get width """
         return self.__width
 
     @width.setter
-    def width(self, value):
-        """ setter width """
-        if (type(value) != int):
+    def width(self, width):
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        if (value < 0):
+        elif width < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        self.__width = width
 
     @property
     def height(self):
-        """ get height """
         return self.__height
 
     @height.setter
-    def height(self, value):
-        """ setter height """
-        if (type(value) != int):
+    def height(self, height):
+        if type(height) is not int:
             raise TypeError("height must be an integer")
-        if (value < 0):
+        elif height < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        self.__height = height
 
     def area(self):
-        """ returns the rectangle area """
-        return (self.__height * self.__width)
+        return self.__width * self.__height
 
     def perimeter(self):
-        """ returns the rectangle perimeter """
-        if self.__height == 0 or self.__width == 0:
+        if self.__height is 0 or self.__width is 0:
             return 0
-        return ((self.__height * 2) + (self.__width * 2))
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
         a = ""
@@ -57,19 +51,18 @@ class Rectangle:
             return a
         else:
             for x in range(self.__height):
-                print(self.print_symbol, end="")
+                for w in range(self.__width):
+                    print(self.print_symbol, end="")
                 if (x < self.__height - 1):
                     print()
         return a
 
     def __repr__(self):
-        """ override repr """
         return (f"Rectangle({self.__width:d}, {self.__height:d})")
 
     def __del__(self):
-        """ override del """
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
