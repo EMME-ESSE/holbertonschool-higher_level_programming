@@ -16,4 +16,4 @@ def text_indentation(text):
                 index += 1
         else:
             print(text[index], end="")
-            index += 1
+                index += 1
