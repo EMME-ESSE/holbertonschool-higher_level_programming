@@ -28,5 +28,3 @@ def matrix_divided(matrix, div):
             new_list.append(round(position/div, 2))
         new_mx.append(new_list)
     return new_mx
-    
-  
