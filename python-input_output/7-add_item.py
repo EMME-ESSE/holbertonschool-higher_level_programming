@@ -13,6 +13,6 @@ try:
     item = load_from_json_file("add_item.json")
 except Exception:
     item = []
-
-item += argv[1:]
+for i in range(1, len(sys.argv)):
+    item += argv[1:]
 save_to_json_file(item, "add_item.json")
