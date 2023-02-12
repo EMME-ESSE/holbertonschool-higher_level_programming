@@ -14,7 +14,6 @@ class Student:
         """function to_json"""
         if attrs is None:
             return self.__dict__
-        else:
-            if all(isinstance(at, str) for at in attrs):
-                if isinstance(attrs, list):
-                    return {a: getattr(self, a) for a in attrs if hasattr(self, a)}
+        if all(isinstance(at, str) for at in attrs):
+            if isinstance(attrs, list):
+                return {a: getattr(self, a) for a in attrs if hasattr(self, a)}
