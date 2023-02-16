@@ -80,3 +80,8 @@ class Rectangle(Base):
         wh = self.__width
         he = self.__height
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(id, x, y, wh, he))
+
+    def update(self, *args):
+        """Update function"""
+        args = (id, self.__width, self.__height, self.__x, self.__y)
+        print("[rectangle] ({}) {}/{} - {}/{}".format(args))
