@@ -71,7 +71,8 @@ class Rectangle(Base):
             print("#" * self.__width, end="")
             print()
 
-    def display(self):
+    def __str__(self):
+        """STR"""
         id = self.id
         x = self.__x
         y = self.__y
