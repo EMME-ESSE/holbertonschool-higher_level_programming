@@ -71,3 +71,4 @@ class Rectangle(Base):
             for y in range(self.__y):
                 print('#', end='')
             print()
+        return f"{self.display()}"
