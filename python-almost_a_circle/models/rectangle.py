@@ -67,8 +67,6 @@ class Rectangle(Base):
 
     def display(self):
         """Returns a # rectangle"""
-        for x in range(self.__x):
-            for y in range(self.__y):
-                print('#', end='')
-            print()
-        return f"{self.display()}"
+        for y in range(self.__y):
+            print('#' * self.__x, end='')
+        print()
