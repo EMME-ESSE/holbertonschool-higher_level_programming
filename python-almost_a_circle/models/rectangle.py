@@ -70,4 +70,4 @@ class Rectangle(Base):
         for x in range(self.__x):
             for y in range(self.__y):
                 print('#', end='')
-        print()
+            print()
