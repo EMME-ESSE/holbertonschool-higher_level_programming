@@ -6,8 +6,7 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle Class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+
         self.width = width
         self.height = height
         self.x = x
@@ -64,4 +63,4 @@ class Rectangle(Base):
 
     def area(self):
         """Returns the rectangle's area"""
-        return self.__width * self.__heigh
+        return self.__width * self.__height
