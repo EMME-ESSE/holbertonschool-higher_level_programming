@@ -51,7 +51,7 @@ class Square(Rectangle):
                 elif key == 'y':
                     self.y = value
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
-    
+
     def to_dictionary(self):
         """Dictionary"""
         return {'id': self.id,
