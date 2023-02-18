@@ -46,11 +46,23 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
+            dm = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy = cls(1)
+            dm = cls(1)
         else:
-            dummy = None
+            dm = None
 
-        dummy.update(**dictionary)
-        return dummy
+        dm.update(**dictionary)
+        return dm
+
+    @classmethod
+    def load_from_file(cls):
+        """Load instances from file and return as a list"""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as f:
+                json_str = f.read()
+                obj_list = cls.from_json_string(json_str)
+                return [cls.create(**obj_dict) for obj_dict in obj_list]
+        except FileNotFoundError:
+            return []
