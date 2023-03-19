@@ -7,7 +7,8 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
+        print("Usage: {} username password database"
+              .format(sys.argv[0]))
         exit(1)
 
     conn = MySQLdb.connect(

@@ -7,7 +7,8 @@ import MySQLdb
 if __name__ == "__main__":
     args = sys.argv
     if len(args) != 5:
-        print("Usage: {} username password database state_name".format(args[0]))
+        print("Usage: {} username password database state_name"
+              .format(args[0]))
         exit(1)
 
     db = MySQLdb.connect(
