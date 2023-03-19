@@ -26,7 +26,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
     cur.execute("SELECT cities.name FROM cities JOIN states ON cities.state_id"
                 " = states.id WHERE states.name = %s ORDER BY cities.id ASC",
-                  (state_name,))
+                (state_name,))
 
     cities = []
     for row in cur.fetchall():
@@ -36,4 +36,3 @@ if __name__ == "__main__":
 
     cur.close()
     conn.close()
-
