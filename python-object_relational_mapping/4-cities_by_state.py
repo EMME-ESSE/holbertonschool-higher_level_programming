@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""task 4"""
-
+"""Task 4"""
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: {} username password database".
-              format(sys.argv[0]))
+        print("Usage: {} username password database".format(sys.argv[0]))
         exit(1)
 
     conn = MySQLdb.connect(
@@ -20,7 +18,9 @@ if __name__ == "__main__":
     )
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY id ASC")
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities"
+                "JOIN states ON cities.state_id" 
+                "= states.id ORDER BY cities.id ASC")
 
     for row in cur.fetchall():
         print(row)
