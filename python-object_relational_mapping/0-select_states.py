@@ -6,13 +6,15 @@ import sys
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    user, passwd, db_name = args
+    user = args[0]
+    password = args[1]
+    db_name = args[2]
 
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=user,
-        passwd=passwd,
+        passwd=password,
         db=db_name
     )
 
