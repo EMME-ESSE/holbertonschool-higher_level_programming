@@ -4,7 +4,7 @@ function add (a, b) {
 }
 
 const arg1 = parseInt(process.argv[2]);
-const arg2 = parseInt(process.argv[3]);
+const arg2 = parseInt(process.argv[3]) || 0;
 
 if (isNaN(arg1) || isNaN(arg2)) {
   console.log('Missing integer arguments');
