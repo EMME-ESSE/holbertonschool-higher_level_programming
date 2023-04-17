@@ -8,7 +8,7 @@ const characterId = 18;
 request.get(url, (err, res, body) => {
   if (err) {
     console.error(err);
-  } 
+  } else {
     const films = JSON.parse(body).results;
     let count = 0;
     for (const film of films) {
@@ -16,7 +16,7 @@ request.get(url, (err, res, body) => {
       if (characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)) {
         count++;
       }
-    
+    }
     console.log(count);
   }
 });
