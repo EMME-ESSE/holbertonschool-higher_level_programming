@@ -7,7 +7,9 @@ request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   }
-  const movies = JSON.parse(body).results;
-  const count = movies.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)).length;
-  console.log(count);
+  const filmData = JSON.parse(body);
+  const wedgeFilms = filmData.results.filter(film => {
+    return film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`);
+  });
+  console.log(`${wedgeFilms.length}`);
 });
