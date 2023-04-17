@@ -18,6 +18,8 @@ request(apiUrl, (err, res, body) => {
         }
       }
     });
-    console.log(completedUser);
+    Object.entries(users).forEach(([userId, count]) => {
+      console.log(`${userId} : ${count}`);
+    });
   }
 });
