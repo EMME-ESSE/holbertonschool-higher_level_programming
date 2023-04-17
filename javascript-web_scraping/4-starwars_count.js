@@ -1,15 +1,26 @@
 #!/usr/bin/node
 const request = require('request');
-const apiUrl = process.argv[2];
+
+const url = process.argv[2];
+
 const characterId = 18;
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error(error);
+request.get(url, (err, res, body) => {
+  if (err) {
+    console.error(err);
+  } 
+  if (response.statusCode !== 200) {
+    console.error(`Unexpected response: ${response.statusCode}`);
+    return;
   }
-  const filmData = JSON.parse(body);
-  const wedgeFilms = filmData.results.filter(film => {
-    return film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`);
-  });
-  console.log(`${wedgeFilms.length}`);
+    const films = JSON.parse(body).results;
+    let count = 0;
+    for (const film of films) {
+      const characters = film.characters;
+      if (characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)) {
+        count++;
+      }
+    
+    console.log(count);
+  }
 });
