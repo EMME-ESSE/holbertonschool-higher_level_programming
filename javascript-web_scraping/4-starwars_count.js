@@ -6,9 +6,8 @@ const characterId = 18;
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
-  } else {
-    const movies = JSON.parse(body).results;
-    const count = movies.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)).length;
-    console.log(count);
   }
+  const movies = JSON.parse(body).results;
+  const count = movies.filter(movie => movie.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)).length;
+  console.log(count);
 });
