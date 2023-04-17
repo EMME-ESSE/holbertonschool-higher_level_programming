@@ -7,7 +7,7 @@ request.get(url, (err, res, body) => {
   if (err) {
     console.error(err);
   }
-  const films = JSON.parse(body);
+  const films = JSON.parse(body).results;
   let count = 0;
   for (const film of films) {
     const characters = film.characters;
@@ -16,5 +16,4 @@ request.get(url, (err, res, body) => {
     }
   }
   console.log(count);
-
 });
