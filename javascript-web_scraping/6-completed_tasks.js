@@ -1,11 +1,10 @@
 #!/usr/bin/node
 const request = require('request');
-
 const apiUrl = process.argv[2];
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error(error);
+request(apiUrl, (err, res, body) => {
+  if (err) {
+    console.error(err);
   } else {
     const tasks = JSON.parse(body);
     const users = {};
@@ -19,9 +18,6 @@ request(apiUrl, (error, response, body) => {
         }
       }
     });
-    console.log(Object.entries(users)
-      .map(([userId, count]) => `User ${userId} completed ${count} tasks.`)
-      .join('\n')
-    );
+    console.log(completedUser);
   }
 });
