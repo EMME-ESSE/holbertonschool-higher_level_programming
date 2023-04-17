@@ -7,9 +7,9 @@ request.get(url, (err, res, body) => {
   if (err) {
     console.error(err);
   } 
-    const films = JSON.parse(body);
+    const films = JSON.parse(body).results;
     let count = 0;
-      if (films.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)) {
+    if (films.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)) {
         count++;
       }
     
