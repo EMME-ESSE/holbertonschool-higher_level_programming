@@ -9,7 +9,7 @@ request.get(url, (err, res, body) => {
   }
   const films = JSON.parse(body);
   let count = 0;
-  for (film of films) {
+  for (const film of films) {
     const characters = film.characters;
     if (characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)) {
       count++;
