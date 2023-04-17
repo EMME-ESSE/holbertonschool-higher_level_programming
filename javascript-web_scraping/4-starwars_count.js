@@ -9,8 +9,8 @@ request.get(url, (err, res, body) => {
   if (err) {
     console.error(err);
   } 
-  if (response.statusCode !== 200) {
-    console.error(`Unexpected response: ${response.statusCode}`);
+  if (res.statusCode !== 200) {
+    console.error(`Unexpected response: ${res.statusCode}`);
     return;
   }
     const films = JSON.parse(body).results;
