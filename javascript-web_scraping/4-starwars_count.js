@@ -1,21 +1,19 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = process.argv[2];
-const characterId = '18';
+const Url = process.argv[2];
 
-request.get({ url }, (error, response, data) => {
-  if (error) {
-    console.error(error);
+request.get(Url, (err, res, body) => {
+  if (err) {
+    console.error(err);
     return;
   }
-  const films = JSON.parse(data).results;
-  let cont = 0;
-  for (const film of films) {
-    const characters = film.characters;
-    if (characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}`)) {
-      cont++;
-    }
-  }
-  console.log(cont);
+
+  const data = JSON.parse(body);
+
+  const filmsWithWedge = data.results.filter(film =>
+    film.characters.includes('https://swapi-api.hbtn.io/api/people/18/')
+  );
+
+  console.log(filmsWithWedge.length);
 });
